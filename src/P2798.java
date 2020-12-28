@@ -16,7 +16,7 @@ public class P2798 {
     int M;
     int max;
 
-    Main(int N, int[] V, int M) {
+    P2798(int N, int[] V, int M) {
         this.N = N;
         al = new int[this.N + 1][this.N + 1];
         visitArr = new boolean[this.N + 1];
@@ -61,7 +61,7 @@ public class P2798 {
         }
         // 설정부
 
-        Main bj = new Main(N, V, M);
+        P2798 bj = new P2798(N, V, M);
 
         for (int i = 1; i < V.length; i++) {
             for (int j = i + 1; j < V.length; j++) {
