@@ -7,7 +7,6 @@ import java.io.OutputStreamWriter;
 public class P2798 {
 
     private static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-    private static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
     int N;
     int[] V;
