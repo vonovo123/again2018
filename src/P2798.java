@@ -16,6 +16,8 @@ public class P2798 {
         this.V = V;
         this.M = M;
         this.max = 0;
+        
+
     }
 
     //배열 V 속의 v 번째 카드를 step + 1번째로 탐색하는 경우의 sum
@@ -29,6 +31,7 @@ public class P2798 {
             //최대값인지 확인하고 탐색 종료
             if (sum <= M && sum > max) {
                 this.max = sum;
+                if(this.max == 21) System.out.println("v: " + V[v]);
             }
             return;
         }

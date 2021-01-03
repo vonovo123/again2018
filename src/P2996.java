@@ -13,7 +13,6 @@ public class P2996 {
         int max = 0;
        
         for (int k = 0; k < AA.length; k++) {
-            int RI = 0;
             String A = AA[k];
             for (int i = 0; i < N / A.length(); i++) {
                 for (int j = 0; j < A.length(); j++) {

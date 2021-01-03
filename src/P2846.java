@@ -5,10 +5,9 @@ import java.io.InputStreamReader;
 public class P2846 {
     public static void main(String[] args) throws NumberFormatException, IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int N;
+        //int N = 0;
         String[] tmp;
         int [] pi;
-        N = Integer.parseInt(br.readLine());
         tmp = br.readLine().split(" ");
         pi = new int[tmp.length];
         for (int i = 0; i < tmp.length; i++) {
