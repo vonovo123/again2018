@@ -31,7 +31,7 @@ class P1697 {
                     return checkCount[s];
                 if (n >= 0 && n <= 100000) {
                     if (checkCount[n] == 0) {
-                        System.out.printf("n: %d\n", n);
+                        //System.out.printf("n: %d\n", n);
                         queue.add(n); // 연결된 위치로 이동하도록 큐에 추가
                         checkCount[n] = checkCount[s] + 1; //해당 위치까지 가는대 걸린 시간(현위치(s)로 오는 시간  더하기 1)
                     } 

@@ -39,9 +39,7 @@ public class P15649 {
         M = Integer.parseInt(in[1]);
         v = new Vector<Integer>();
         visited = new boolean[N];
-        for (int i = 1; i <= 1; i++) {
-            dfs(i);
-        }
+        dfs(1);
         bw.flush();
         
 
