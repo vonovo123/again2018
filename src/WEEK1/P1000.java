@@ -1,3 +1,5 @@
+package WEEK1;
+
 import java.io.BufferedReader;
 
 public class P1000 {
