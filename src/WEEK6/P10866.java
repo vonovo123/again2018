@@ -2,6 +2,7 @@ package WEEK6;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.Arrays;
@@ -20,7 +21,7 @@ public class P10866 {
         }
         p++;
     }
-    
+
     static void push_back(int x) {
         deck[p++] = x;
     }
@@ -37,7 +38,7 @@ public class P10866 {
         p--;
         return pop;
     }
- 
+
     static int pop_back() {
         if (p == 0)
             return -1;
@@ -50,40 +51,49 @@ public class P10866 {
     static int size() {
         return p;
     }
-    
+
     static int empty() {
         return p == 0 ? 1 : 0;
     }
-    
+
     static int front() {
         if (p == 0)
             return -1;
         return deck[0];
     }
-    
+
     static int back() {
         if (p == 0)
             return -1;
         return deck[p - 1];
     }
-    public static void main(String[] args) {
+
+    public static void main(String[] args) throws NumberFormatException, IOException {
         deck = new int[20000];
-        p = 0;
-        push_back(1);
-        push_front(2);
-        System.out.println(front());
-        System.out.println(back());
-        System.out.println(size());
-        System.out.println(empty());
-        System.out.println(pop_front());
-        System.out.println(pop_back());
-        System.out.println(pop_front());
-        System.out.println(size());
-        System.out.println(empty());
-        System.out.println(pop_back());
-        push_front(3);
-        System.out.println(empty()); 
-        System.out.println(front()); 
+        int N = Integer.parseInt(br.readLine());
+        String[] com = new String[2];
+        String str;
+        for (int i = 0; i < N; i++) {
+            com = br.readLine().split(" ");
+            str = com[0];
+            if (str.equals("push_front")) {
+                push_front(Integer.parseInt(com[1]));
+            } else if (str.equals("push_back")) {
+                push_back(Integer.parseInt(com[1]));
+            } else if (str.equals("pop_front")) {
+                System.out.println(pop_front());  
+            } else if (str.equals("pop_back")) {
+                System.out.println(pop_back());
+            } else if (str.equals("size")) {
+                System.out.println(size());
+            } else if (str.equals("empty")) {
+                    System.out.println(empty());
+            } else if (str.equals("front")) {
+                System.out.println(front());
+            } else if (str.equals("back")) {
+                System.out.println(back());
+            }
+        }
 
     }
 }
