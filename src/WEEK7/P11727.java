@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
-public class Main {
+public class P11727 {
     static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 

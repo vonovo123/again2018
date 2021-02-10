@@ -3,8 +3,6 @@ package WEEK3;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Vector;
 
@@ -32,17 +30,21 @@ public class P2309 {
             return;
         }
         
-        //깊이탐색 합이 100이 되는 최초배열만 탐색하면 되기때문에 i = index
+        //중복탐색 할 필요 없기 때문에 index 부터 깊이탐색
         for (int i = index; i < 9; i++) {
             int flag = 0;
-            //이미 존재하는 값이면
+            //index에 해당하는 값이 합을구할 백터 resultA에 이미 존재하는 값이면 뛰어넘는다.
             for (int j = 0; j < resultA.size(); j++) {
                 if (resultA.get(j) == inputA[i])
                     flag = 1;
             }
+            //없는값이면            
             if (flag == 0) {
+                //인덱스 i 에 해당하는 값을 합을 구할 배열에 넣어준다.
                 resultA.add(inputA[i]);
-                dfs(i);
+                //다음 인덱스 부터 다시 깊이 탐색
+                dfs(i + 1);
+                //끝까지 탐색하고 돌아온 후 백트래킹을 위해 값을 빼준다.
                 resultA.remove(resultA.size() - 1);
             }
         }
