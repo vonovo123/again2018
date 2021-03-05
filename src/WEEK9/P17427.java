@@ -14,8 +14,8 @@ public class P17427 {
     public static void main(String[] args) throws NumberFormatException, IOException {
         N = Integer.parseInt(br.readLine());
         long sub = 0;
-        int[] a = new int[N + 1]; 
         for (int i = 1; i <= N; i++) {
+            System.out.println("ans:" + ((N / i) * i));
             sub =  sub + ((N / i) * i);
         }
 
