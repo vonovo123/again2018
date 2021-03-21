@@ -11,7 +11,7 @@ import java.util.Queue;
 import java.util.StringTokenizer;
 import java.util.Vector;
 
-public class Main {
+public class P11724 {
 
     static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
