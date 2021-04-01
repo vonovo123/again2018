@@ -1,67 +1,47 @@
 <link rel="stylesheet" href="//cdn.jsdelivr.net/highlight.js/8.7/styles/monokai_sublime.min.css">
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.5.0/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
-<pre><code class="Java">package WEEK3;
+<pre><code class="Java">
+package WEEK4;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-import java.util.Vector;
 
-public class P15649 {
-
+public class P1463 {
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-	static int N, M; 
-    static boolean[] visited;
-    static Vector<Integer> v;
-    //깊이 탐색
-    static void dfs() throws IOException {
-        //수열의 사이즈가 M이 되면 탐색 종료
-        if (v.size() == M) {
-            //일괄 출력을 위해 버퍼에 담음
-            for (int j = 0; j < v.size(); j++) {
-                if (j != v.size() - 1) {
-                    bw.write(v.get(j) + " ");
-                } else {
-                    bw.write(v.get(j) + "\n");
-                }
-            }
-            return;
-        }
-        //완전탐색
-        for (int i = 1; i <= N; i++) {
-            //방문한 곳이 아니면 
-            if (!visited[i - 1]) {
-                //방문
-                visited[i - 1] = true;
-                //수열에 넣고
-                v.add(i);
-                //다음 탐색진행
-                dfs();
-                //완전 탐색을 위한 백트레킹
-                visited[i - 1] = false;
-                v.remove(v.size() - 1);
-            }
-        }
-    }
-    public static void main(String[] args) throws IOException {
-        String[] in = br.readLine().split(" ");
-        //1 부터 N 까지 자연수 중        
-        N = Integer.parseInt(in[0]);
-        //중복없이 M 개를 고른 수열
-        M = Integer.parseInt(in[1]);
-        //수열을 담을 vector
-        v = new Vector<Integer>();
-        //탐색 여부를 기록할 배열
-        visited = new boolean[N];
-        //깊이탐색 시작
-        dfs();
-        //출력
-        bw.flush();
-        
+    static int N;
+    static int[] NA;
 
+    public static void main(String[] args) throws NumberFormatException, IOException {
+        N = Integer.parseInt(br.readLine());
+        NA = new int[N + 1];
+        // 1이 1이 되는 최소횟수는 0
+        NA[1] = 0;
+        // 2에서 N까지 최소횟수 구하기
+        for (int i = 2; i <= N; i++) {
+            // 임시 최소횟수는 i - 1이 1이 되는 횟수에서 + 1( 1을 더해서 왔을때 )
+            int tmp = NA[i - 1] + 1;
+            // 2로 나누어 떨어질때
+            if (i % 2 == 0) {
+                // i를 2로 나눈 값이 1이 되는 횟수 + 1 ( 2를 곱해서 왔을때 ) 와 1을 더해서 왔을때 의 값중 작은값(최소값을 구해야하기때문)이
+                // 최소횟수
+                tmp = tmp > NA[i / 2] + 1 ? NA[i / 2] + 1 : tmp;
+            }
+            // 3으로 나누어 떨어질때
+            if (i % 3 == 0) {
+                // i를 3로 나눈 값이 1이 되는 횟수 + 1 ( 3를 곱해서 왔을때 ) 와 1을 더해서 왔을때 의 값중 작은값(최소값을 구해야하기때문)이
+                // 최소횟수
+                tmp = tmp > NA[i / 3] + 1 ? NA[i / 3] + 1 : tmp;
+            }
+            //최소값 저장
+            NA[i] = tmp;
+        }
+        //출력
+        System.out.println(NA[N]);
     }
 }
 </code></pre>

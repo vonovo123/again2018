@@ -1,0 +1,427 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Launch P1000",
+            "request": "launch",
+            "mainClass": "WEEK1.P1000",
+            "projectName": "Again2018_7b8cc72b"
+        },
+        {
+            "type": "java",
+            "name": "Launch P1330",
+            "request": "launch",
+            "mainClass": "WEEK1.P1330",
+            "projectName": "Again2018_7b8cc72b"
+        },
+        {
+            "type": "java",
+            "name": "Launch P2484",
+            "request": "launch",
+            "mainClass": "WEEK1.P2484",
+            "projectName": "Again2018_7b8cc72b"
+        },
+        {
+            "type": "java",
+            "name": "Launch P2558",
+            "request": "launch",
+            "mainClass": "WEEK1.P2558",
+            "projectName": "Again2018_7b8cc72b"
+        },
+        {
+            "type": "java",
+            "name": "Launch P2752",
+            "request": "launch",
+            "mainClass": "WEEK1.P2752",
+            "projectName": "Again2018_7b8cc72b"
+        },
+        {
+            "type": "java",
+            "name": "Launch P2753",
+            "request": "launch",
+            "mainClass": "WEEK1.P2753",
+            "projectName": "Again2018_7b8cc72b"
+        },
+        {
+            "type": "java",
+            "name": "Launch P2798",
+            "request": "launch",
+            "mainClass": "WEEK1.P2798",
+            "projectName": "Again2018_7b8cc72b"
+        },
+        {
+            "type": "java",
+            "name": "Launch P1260",
+            "request": "launch",
+            "mainClass": "WEEK10.P1260",
+            "projectName": "Again2018_7b8cc72b"
+        },
+        {
+            "type": "java",
+            "name": "Launch P14226",
+            "request": "launch",
+            "mainClass": "WEEK10.P14226",
+            "projectName": "Again2018_7b8cc72b"
+        },
+        {
+            "type": "java",
+            "name": "Launch P14499",
+            "request": "launch",
+            "mainClass": "WEEK10.P14499",
+            "projectName": "Again2018_7b8cc72b"
+        },
+        {
+            "type": "java",
+            "name": "Launch P15651",
+            "request": "launch",
+            "mainClass": "WEEK11.P15651",
+            "projectName": "Again2018_7b8cc72b"
+        },
+        {
+            "type": "java",
+            "name": "Launch P16194",
+            "request": "launch",
+            "mainClass": "WEEK11.P16194",
+            "projectName": "Again2018_7b8cc72b"
+        },
+        {
+            "type": "java",
+            "name": "Launch P17425",
+            "request": "launch",
+            "mainClass": "WEEK11.P17425",
+            "projectName": "Again2018_7b8cc72b"
+        },
+        {
+            "type": "java",
+            "name": "Launch P11724",
+            "request": "launch",
+            "mainClass": "WEEK12.P11724",
+            "projectName": "Again2018_7b8cc72b"
+        },
+        {
+            "type": "java",
+            "name": "Launch P13549",
+            "request": "launch",
+            "mainClass": "WEEK12.P13549",
+            "projectName": "Again2018_7b8cc72b"
+        },
+        {
+            "type": "java",
+            "name": "Launch P14890",
+            "request": "launch",
+            "mainClass": "WEEK12.P14890",
+            "projectName": "Again2018_7b8cc72b"
+        },
+        {
+            "type": "java",
+            "name": "Launch P14501",
+            "request": "launch",
+            "mainClass": "WEEK13.P14501",
+            "projectName": "Again2018_7b8cc72b"
+        },
+        {
+            "type": "java",
+            "name": "Launch P15990",
+            "request": "launch",
+            "mainClass": "WEEK13.P15990",
+            "projectName": "Again2018_7b8cc72b"
+        },
+        {
+            "type": "java",
+            "name": "Launch P2609",
+            "request": "launch",
+            "mainClass": "WEEK13.P2609",
+            "projectName": "Again2018_7b8cc72b"
+        },
+        {
+            "type": "java",
+            "name": "Launch P1261",
+            "request": "launch",
+            "mainClass": "WEEK14.P1261",
+            "projectName": "Again2018_7b8cc72b"
+        },
+        {
+            "type": "java",
+            "name": "Launch P15662",
+            "request": "launch",
+            "mainClass": "WEEK14.P15662",
+            "projectName": "Again2018_7b8cc72b"
+        },
+        {
+            "type": "java",
+            "name": "Launch P1707",
+            "request": "launch",
+            "mainClass": "WEEK14.P1707",
+            "projectName": "Again2018_7b8cc72b"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main",
+            "request": "launch",
+            "mainClass": "WEEK15.Main",
+            "projectName": "Again2018_7b8cc72b"
+        },
+        {
+            "type": "java",
+            "name": "Launch P10974",
+            "request": "launch",
+            "mainClass": "WEEK15.P10974",
+            "projectName": "Again2018_7b8cc72b"
+        },
+        {
+            "type": "java",
+            "name": "Launch P1978",
+            "request": "launch",
+            "mainClass": "WEEK15.P1978",
+            "projectName": "Again2018_7b8cc72b"
+        },
+        {
+            "type": "java",
+            "name": "Launch P14582",
+            "request": "launch",
+            "mainClass": "WEEK2.P14582",
+            "projectName": "Again2018_7b8cc72b"
+        },
+        {
+            "type": "java",
+            "name": "Launch P2846",
+            "request": "launch",
+            "mainClass": "WEEK2.P2846",
+            "projectName": "Again2018_7b8cc72b"
+        },
+        {
+            "type": "java",
+            "name": "Launch P2966",
+            "request": "launch",
+            "mainClass": "WEEK2.P2966",
+            "projectName": "Again2018_7b8cc72b"
+        },
+        {
+            "type": "java",
+            "name": "Launch P4458",
+            "request": "launch",
+            "mainClass": "WEEK2.P4458",
+            "projectName": "Again2018_7b8cc72b"
+        },
+        {
+            "type": "java",
+            "name": "Launch P10430",
+            "request": "launch",
+            "mainClass": "WEEK3.P10430",
+            "projectName": "Again2018_7b8cc72b"
+        },
+        {
+            "type": "java",
+            "name": "Launch P10972",
+            "request": "launch",
+            "mainClass": "WEEK3.P10972",
+            "projectName": "Again2018_7b8cc72b"
+        },
+        {
+            "type": "java",
+            "name": "Launch P11723",
+            "request": "launch",
+            "mainClass": "WEEK3.P11723",
+            "projectName": "Again2018_7b8cc72b"
+        },
+        {
+            "type": "java",
+            "name": "Launch P15649",
+            "request": "launch",
+            "mainClass": "WEEK3.P15649",
+            "projectName": "Again2018_7b8cc72b"
+        },
+        {
+            "type": "java",
+            "name": "Launch P2309",
+            "request": "launch",
+            "mainClass": "WEEK3.P2309",
+            "projectName": "Again2018_7b8cc72b"
+        },
+        {
+            "type": "java",
+            "name": "Launch P2309_BITMASKING",
+            "request": "launch",
+            "mainClass": "WEEK3.P2309_BITMASKING",
+            "projectName": "Again2018_7b8cc72b"
+        },
+        {
+            "type": "java",
+            "name": "Launch P2529",
+            "request": "launch",
+            "mainClass": "WEEK3.P2529",
+            "projectName": "Again2018_7b8cc72b"
+        },
+        {
+            "type": "java",
+            "name": "Launch P9095",
+            "request": "launch",
+            "mainClass": "WEEK3.P9095",
+            "projectName": "Again2018_7b8cc72b"
+        },
+        {
+            "type": "java",
+            "name": "Launch P1463",
+            "request": "launch",
+            "mainClass": "WEEK4.P1463",
+            "projectName": "Again2018_7b8cc72b"
+        },
+        {
+            "type": "java",
+            "name": "Launch P15650",
+            "request": "launch",
+            "mainClass": "WEEK4.P15650",
+            "projectName": "Again2018_7b8cc72b"
+        },
+        {
+            "type": "java",
+            "name": "Launch P16935",
+            "request": "launch",
+            "mainClass": "WEEK4.P16935",
+            "projectName": "Again2018_7b8cc72b"
+        },
+        {
+            "type": "java",
+            "name": "Launch P1697",
+            "request": "launch",
+            "mainClass": "WEEK4.P1697",
+            "projectName": "Again2018_7b8cc72b"
+        },
+        {
+            "type": "java",
+            "name": "Launch qQueue",
+            "request": "launch",
+            "mainClass": "WEEK4.qQueue",
+            "projectName": "Again2018_7b8cc72b"
+        },
+        {
+            "type": "java",
+            "name": "Launch P1759",
+            "request": "launch",
+            "mainClass": "WEEK5.P1759",
+            "projectName": "Again2018_7b8cc72b"
+        },
+        {
+            "type": "java",
+            "name": "Launch P3085",
+            "request": "launch",
+            "mainClass": "WEEK5.P3085",
+            "projectName": "Again2018_7b8cc72b"
+        },
+        {
+            "type": "java",
+            "name": "Launch P4375",
+            "request": "launch",
+            "mainClass": "WEEK5.P4375",
+            "projectName": "Again2018_7b8cc72b"
+        },
+        {
+            "type": "java",
+            "name": "Launch P10866",
+            "request": "launch",
+            "mainClass": "WEEK6.P10866",
+            "projectName": "Again2018_7b8cc72b"
+        },
+        {
+            "type": "java",
+            "name": "Launch P10973",
+            "request": "launch",
+            "mainClass": "WEEK6.P10973",
+            "projectName": "Again2018_7b8cc72b"
+        },
+        {
+            "type": "java",
+            "name": "Launch P11726",
+            "request": "launch",
+            "mainClass": "WEEK6.P11726",
+            "projectName": "Again2018_7b8cc72b"
+        },
+        {
+            "type": "java",
+            "name": "Launch P16926",
+            "request": "launch",
+            "mainClass": "WEEK6.P16926",
+            "projectName": "Again2018_7b8cc72b"
+        },
+        {
+            "type": "java",
+            "name": "Launch P1037",
+            "request": "launch",
+            "mainClass": "WEEK7.P1037",
+            "projectName": "Again2018_7b8cc72b"
+        },
+        {
+            "type": "java",
+            "name": "Launch P11727",
+            "request": "launch",
+            "mainClass": "WEEK7.P11727",
+            "projectName": "Again2018_7b8cc72b"
+        },
+        {
+            "type": "java",
+            "name": "Launch P1182",
+            "request": "launch",
+            "mainClass": "WEEK7.P1182",
+            "projectName": "Again2018_7b8cc72b"
+        },
+        {
+            "type": "java",
+            "name": "Launch P13023",
+            "request": "launch",
+            "mainClass": "WEEK8.P13023",
+            "projectName": "Again2018_7b8cc72b"
+        },
+        {
+            "type": "java",
+            "name": "Launch P13913",
+            "request": "launch",
+            "mainClass": "WEEK8.P13913",
+            "projectName": "Again2018_7b8cc72b"
+        },
+        {
+            "type": "java",
+            "name": "Launch P16927",
+            "request": "launch",
+            "mainClass": "WEEK8.P16927",
+            "projectName": "Again2018_7b8cc72b"
+        },
+        {
+            "type": "java",
+            "name": "Launch P11052",
+            "request": "launch",
+            "mainClass": "WEEK9.P11052",
+            "projectName": "Again2018_7b8cc72b"
+        },
+        {
+            "type": "java",
+            "name": "Launch P11052_dfs",
+            "request": "launch",
+            "mainClass": "WEEK9.P11052_dfs",
+            "projectName": "Again2018_7b8cc72b"
+        },
+        {
+            "type": "java",
+            "name": "Launch P1476",
+            "request": "launch",
+            "mainClass": "WEEK9.P1476",
+            "projectName": "Again2018_7b8cc72b"
+        },
+        {
+            "type": "java",
+            "name": "Launch P17427",
+            "request": "launch",
+            "mainClass": "WEEK9.P17427",
+            "projectName": "Again2018_7b8cc72b"
+        }
+    ]
+}
