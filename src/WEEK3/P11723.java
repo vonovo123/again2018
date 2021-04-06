@@ -16,7 +16,8 @@ public class P11723 {
     }
 
     static void remove(int x) {
-        in = in & ~(1 << x - 1); // 1을 x-1 비트만큼 왼쪽으로 민 값의 ~연산(0,1 반전)한 값의 and 연산, 왼쪽으로 밀린 위치는 and 연산 후 0이 된다.
+        in = in & ~(1 << x - 1); // 1을 x-1 비트만큼 왼쪽으로 민 값(10, 100, 1000 등)의 ~연산(0,1 반전)한 값의 and 연산, 왼쪽으로 밀린 위치는
+                                 // and 연산 후 0이 된다.
     }
 
     static int check(int x) {

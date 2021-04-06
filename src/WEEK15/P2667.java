@@ -11,7 +11,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Vector;
 
-public class Main {
+public class P2667 {
     static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     static String[][] arr;

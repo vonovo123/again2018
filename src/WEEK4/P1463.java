@@ -33,9 +33,10 @@ public class P1463 {
                 // 최소횟수
                 tmp = tmp > NA[i / 3] + 1 ? NA[i / 3] + 1 : tmp;
             }
+            // 최소값 저장
             NA[i] = tmp;
         }
+        // 출력
         System.out.println(NA[N]);
     }
-    // 1000000
 }
