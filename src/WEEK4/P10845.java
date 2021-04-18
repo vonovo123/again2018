@@ -1,7 +1,3 @@
-<link rel="stylesheet" href="//cdn.jsdelivr.net/highlight.js/8.7/styles/monokai_sublime.min.css">
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.5.0/highlight.min.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
-<pre><code class="Java">
 package WEEK4;
 
 import java.io.BufferedReader;
@@ -10,7 +6,7 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.lang.reflect.Method;
 
-public class Main {
+public class P10845 {
     static qQueue q;
     static Method mt;
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -96,5 +92,3 @@ class qQueue {
         return -1;
     }
 }
-
-</code></pre>
