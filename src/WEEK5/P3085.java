@@ -90,7 +90,6 @@ public class P3085 {
                     max = result;  
             }
         }
-        //ystem.out.println("max: " + max);
         
         for (int i = 0; i < N; i++) {
             for (int j = 0; j < N - 1; j++) {

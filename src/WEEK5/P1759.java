@@ -56,40 +56,20 @@ public class P1759 {
             }
             return;
         }
-
         for (int i = d; i < C; i++) {
             // 방문한적이 없는 알파벳이면
             if (isPossible[i] != 1) {
                 // 방문처리
                 isPossible[i] = 1;
-                // 암호의 첫자리 탐색이면
-                if (result.size() == 0) {
+                // 오름차순을 위해 시작점이거나 시작점이 아니고 직전 위치의 알파뱃이 해당 알파벳 보다 작으면 다음 깊이탐색 진행
+                if (result.size() == 0 || (int) result.get(result.size() - 1).charAt(0) < (int) inA[i].charAt(0)) {
                     // d번째 자리에 d번째 알파벳 대입
                     result.add(inA[i]);
-                    // 다음 노드로 이동
-                    dfs(d + 1);
-                    // 첫자리 이후 이면
-                } else {
-                    // 오름차순정렬을 위해 직전 위치의 알파뱃이 해당 알파벳 보다 작으면
-                    // System.out.println(i);
-                    // System.out.println(result.get(result.size() - 1).charAt(0));
-                    // System.out.println(inA[i].charAt(0));
-                    // System.out.println(result.get(result.size() - 1).charAt(0) < (int)
-                    // inA[i].charAt(0));
-                    if ((int) result.get(result.size() - 1).charAt(0) < (int) inA[i].charAt(0)) {
-                        // d번째 자리에 d번째 알파벳 대입
-                        result.add(inA[i]);
-                        // 다음 탐색
-                        dfs(i + 1);
-                    }
+                    // 다음 탐색
+                    dfs(i + 1);
+                    isPossible[i] = 0;
+                    result.remove(result.size() - 1);
                 }
-                // 백트래킹을 위해 탐색한 요소 뺀다.
-                isPossible[i] = 0;
-                for (int j = 0; j < result.size(); j++) {
-                    System.out.printf("%s ", result.get(j));
-                }
-                System.out.println();
-                result.remove(result.size() - 1);
             }
         }
     }
@@ -106,10 +86,6 @@ public class P1759 {
         inA = br.readLine().split(" ");
         // 알파벳 순으로 정렬
         Arrays.sort(inA);
-        for (String s : inA) {
-            System.out.printf("%s ", s);
-        }
-        System.out.println();
         // 결과값
         result = new Vector<String>();
         // 모음
@@ -118,5 +94,4 @@ public class P1759 {
         ja = "bcdfghjklmnpqrstvwxyz";
         dfs(0);
     }
-
 }
