@@ -9,95 +9,140 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-import java.util.Arrays;
-import java.util.Vector;
 
-public class P1759 {
+public class P3085 {
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-    static int L, C;
-    static String[] inA;
-    static int[] isPossible;
-    static Vector<String> result;
-    static String mo;
-    static String ja;
-
-    static int parseInt(String in) {
-        return Integer.parseInt(in);
-    }
-
-    static int checkMo() {
-        for (int i = 0; i < result.size(); i++) {
-            if (mo.indexOf(result.get(i)) != -1) {
-                return 1;
-            }
-        }
-        return 0;
-    }
-
-    static int checkJa() {
-        int output = 0;
-        for (int i = 0; i < result.size(); i++) {
-            if (ja.indexOf(result.get(i)) != -1) {
-                output++;
-            }
-            if (output == 2)
-                return 1;
-        }
-        return -1;
-    }
-
-    static void dfs(int d) {
-        if (result.size() == L) {// 탐색문자열의 길이가 암호의 길이와 같으면
-            if (checkMo() == 1) {// 모음이 최소 1개있는지 확인
-                if (checkJa() == 1) {// 자음이 최소 2개있는지 확인
-                    for (int i = 0; i < result.size(); i++) {
-                        // 만족하면 출력
-                        System.out.print(result.get(i));
-                    }
-                    System.out.println();
-                }
-            }
+    static String[][] iaa;
+    static int N;
+    //지정된 좌우 위치를 바꿈
+    static void switchArrR(int i, int j) {
+        if (iaa[i][j].equals(iaa[i][j + 1])) {
             return;
         }
-        for (int i = d; i < C; i++) {
-            // 방문한적이 없는 알파벳이면
-            if (isPossible[i] != 1) {
-                // 방문처리
-                isPossible[i] = 1;
-                // 오름차순을 위해 시작점이거나 시작점이 아니고 직전 위치의 알파뱃이 해당 알파벳 보다 작으면 다음 깊이탐색 진행
-                if (result.size() == 0 || (int) result.get(result.size() - 1).charAt(0) < (int) inA[i].charAt(0)) {
-                    // d번째 자리에 d번째 알파벳 대입
-                    result.add(inA[i]);
-                    // 다음 탐색
-                    dfs(i + 1);
-                    isPossible[i] = 0;
-                    result.remove(result.size() - 1);
-                }
+        String tmp = null;
+        tmp = iaa[i][j];
+        iaa[i][j] = iaa[i][j + 1];
+        iaa[i][j + 1] = tmp;
+
+        
+    }
+    
+    // 지정된 상하 위치를 바꿈
+    static void switchArrC(int i, int j) {
+        if (iaa[i][j].equals(iaa[i + 1][j])) {
+            return;
+        }
+        String tmp = iaa[i][j];
+        iaa[i][j] = iaa[i + 1][j];
+        iaa[i + 1][j] = tmp;
+    }
+    
+    // 같은열에 좌우로 인접한 같은 색이 몇개 있는지 탐색
+    static int searchR(int c, int r) {
+        int count = 0;
+        
+        for (int i = r; i < N; i++) {
+            if (iaa[c][i].equals(iaa[c][r])) {
+                count++;
+            } else {
+                break;
             }
         }
+        for (int i = r - 1; i > 0; i--) {
+            if (iaa[c][i].equals(iaa[c][r])) {
+                count++;
+            } else {
+                break;
+            }
+        }
+        
+        return count;
     }
+    //같은행에 위아래로 인접한 같은 색이 몇개 있는지 탐색
+    static int searchC(int c, int r) {
+        int count = 0;
+        for (int i = c; i < N; i++) {
+            if (iaa[i][r].equals(iaa[c][r])) {
+                count++;
+            } else {
+                break;
+            }
+        }
+        for (int i = c - 1; i > 0; i--) {
+            if (iaa[i][r].equals(iaa[c][r])) {
+                count++;
+            } else {
+                break;
+            }
+        }
+        return count;
+    }
+    
+    public static void main(String[] args) throws NumberFormatException, IOException {
+        //보드의 크기
+        N = Integer.parseInt(br.readLine());
+        
+        iaa = new String[N][N];
+        //최대로 먹을 수 있는 사탕수
+        int max = 0;
 
-    public static void main(String[] args) throws IOException {
-        String[] in = br.readLine().split(" ");
-        // 암호의 길이
-        L = parseInt(in[0]);
-        // 주어지는 알파벳의 길이
-        C = parseInt(in[1]);
-        // 가불판별값 담을 배열
-        isPossible = new int[C];
-        // 주어진 알파벳
-        inA = br.readLine().split(" ");
-        // 알파벳 순으로 정렬
-        Arrays.sort(inA);
-        // 결과값
-        result = new Vector<String>();
-        // 모음
-        mo = "aeiou";
-        // 자음
-        ja = "bcdfghjklmnpqrstvwxyz";
-        dfs(0);
+        // 사탕 배열
+        for (int i = 0; i < N; i++) {
+            iaa[i] = br.readLine().split("");
+        }
+        //바꾸지않은 상태에서 먹을 수 있는 사탕색상 탐색
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < N; j++) {
+                int result = searchR(i, j);
+                if (max < result)
+                    max = result;
+                result = searchC(i, j);
+                if (max < result)
+                    max = result;  
+            }
+        }
+        //배열내의 모든 각각 사탕을 좌우로 바꾼 후 최대로 먹을 수 있는 사탕 수 탐색 
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < N - 1; j++) {
+                //좌우 위치 바꾸기
+                switchArrR(i, j);
+                for (int a = 0; a < N; a++) {
+                    for (int b = 0; b < N; b++) {
+                        int result = searchR(a, b);
+                        if (max < result)
+                            max = result;
+                        result = searchC(a, b);
+                        if (max < result)
+                            max = result;
+                    }
+                }
+                //원복
+                switchArrR(i, j);
+            }
+        }
+        // 배열내의 모든 각각 사탕을 위아래로 바꾼 후 최대로 먹을 수 있는 사탕 수 탐색
+        for (int i = 0; i < N - 1; i++) {
+            for (int j = 0; j < N; j++) {
+                //위아래로 바꾸기
+                switchArrC(i, j);
+                for (int a = 0; a < N; a++) {
+                    for (int b = 0; b < N; b++) {
+                        int result = searchR(a, b);
+                        if (max < result)
+                            max = result;
+                        result = searchC(a, b);
+                        if (max < result)
+                            max = result;
+                    }
+                }
+                //원복
+                switchArrC(i, j);
+            }
+        }
+        System.out.println(max);
     }
 }
+
 
 </code></pre>
