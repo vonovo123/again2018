@@ -8,6 +8,13 @@
             "type": "java",
             "name": "Launch Main",
             "request": "launch",
+            "mainClass": "WEEK22.Main",
+            "projectName": "Again2018_7b8cc72b"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main",
+            "request": "launch",
             "mainClass": "WEEK16.Main",
             "projectName": "Again2018_7b8cc72b"
         },

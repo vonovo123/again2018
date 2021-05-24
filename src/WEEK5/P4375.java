@@ -5,7 +5,6 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-import java.math.BigInteger;
 
 public class P4375 {
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -13,19 +12,22 @@ public class P4375 {
 
     public static void main(String[] args) throws IOException {
         String in = "";
-        // Input이 안들어올때 까지 반복
-        while ((in = br.readLine()) != null) {
-            int n = Integer.parseInt(in);
-            if (n == 1) {
-                System.out.println(1);
+
+        while (!(in = br.readLine()).equals("")) {
+            int iin = Integer.parseInt(in);
+            if (iin == 1) {
+                System.out.println(iin);
             } else {
-                int cnt = 2;
-                long div = 1;
-                while ((div = ((div * 10) % n + 1) % n) == 1) {
-                    System.out.println(div);
-                    cnt += 1;
+                long t = 1;
+                int ti = 2;
+                //1로만 이루어진 수가 나누어 떨어질때까지 나머지에 1씩 더하면서 나눈다
+                while ((t = ((t * 10) + 1) % iin) != 0) {
+                    //자리수는 하나씩 더하면서 구한다
+                    ti += 1;
                 }
+                System.out.println(ti);
             }
+
         }
     }
 }
