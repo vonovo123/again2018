@@ -5,69 +5,64 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-import java.util.Arrays;
-import java.util.Comparator;
+import java.util.Vector;
 
 public class P10973 {
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
     public static void main(String[] args) throws NumberFormatException, IOException {
-        //주어지는 순열의 길이
+        // 주어지는 순열의 길이
         int N = Integer.parseInt(br.readLine());
         String[] tmp = br.readLine().split(" ");
-        //순열
+        // 순열
         Integer[] a = new Integer[tmp.length];
         int index = 0;
         for (String i : tmp) {
             a[index] = Integer.parseInt(i);
             index++;
         }
-        //순열의 오른쪽 부터 내림차순으로 정렬된 부분순열의 왼쪽 끝 위치
-        int e = N - 1;
-        //순열의 오른쪽 끝부터 탐색
-        for (int i = N - 1; i >= 0; i--) {
-            //현재 부분순열 끝의 값보다 작으면 내림차순
-            if (a[i] <= a[e])
-                //왼쪽 끝의 위치는 탐색부 i 가 된다.
-                e = i;
-            //현재 부분순열의 끝의 값보다 크면 내림차순이 아님   
-            else {
-                //더이상 탐색하지 않는다.
-                break;
-            }
-        }
-        //왼쪽끝까지 내림차순으로 정렬돼있으면 오름차순이므로 -1 출력
-        if (e == 0) {
-            System.out.println(-1);
-        } else {
-            //s는 오른쪽 끝부터 이어진 내림차순 왼쪽끝 부분의 왼쪽요소의 위치
-            int s = e - 1;
-            //e 부터 순열의 끝까지의 부분순열을 왼쪽 내림차순으로 정렬한다
-            Arrays.sort(a, e, N, new Comparator<Integer>(){
-                @Override
-                public int compare(Integer o1, Integer o2) {
-                    // TODO Auto-generated method stub
-                    return o2.compareTo(o1);
-                }
-            });
-            //내림차순으로 정렬된 부분순열에서 a[s]의 값과 가장 작고 가깝운 값을 찾아 s와 위치를 변경한다
-            for (int i = e; i < N; i++) {
-                if (a[i] < a[s]) {
-                    int temp = a[i];
-                    a[i] = a[s];
-                    a[s] = temp;
+        // 오름차순 시작점 찾기
+
+        // 탐색부가 탐색부의 이전 요소보다 작으면 오름차순 시작점
+        while (true) {
+            Vector<Integer> v = new Vector<Integer>();
+            int p = -1;
+            for (int i = N - 1; i >= 1; i--) {
+                // 오름차순으로 정렬해서 붙일 수 있도록 벡터에 담기
+                v.add(a[i]);
+                if (a[i] < a[i - 1]) {
+                    p = i;
                     break;
                 }
             }
-            for (int i = 0; i < N; i++) {
-                if (i == N - 1) {
-                    System.out.println(a[i]);
-                } else {
+            // 이미 오름차순으로 정렬되어있으면 이전 순열이 없음
+            if (p == -1) {
+                System.out.println(-1);
+                break;
+            } else {
+                // 오름차순 시작점의 직전 부분
+                int s = p - 1;
+                // 오름차순 시작점부터 내림차순으로 정렬
+                int c = 0; // 위치바꿀 부분
+                int diff = a[s]; // 차이
+                for (int i = 0; i < v.size(); i++) {
+                    a[p + i] = v.get(i);
+                    if (a[s] > a[p + i] && diff > a[s] - a[p + i]) {
+                        diff = a[s] - a[p + i];
+                        c = p + i;
+                    }
+                }
+                // s와 s의 가장 가까운 작은 수와 자리바꿈
+                int tmpp = a[c];
+                a[c] = a[s];
+                a[s] = tmpp;
+                for (int i = 0; i < N; i++) {
                     System.out.printf("%d ", a[i]);
                 }
+                System.out.println();
             }
+        }
 
     }
-}
 }
