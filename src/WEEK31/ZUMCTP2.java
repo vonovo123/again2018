@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Vector;
 
-public class P2 {
+public class ZUMCTP2 {
     public static String[] solution(String[] logs) {
         String[] answer = {};
         // aLogs = {{id, 문제번호, 점수},}
