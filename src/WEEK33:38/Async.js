@@ -32,3 +32,5 @@ async function solution(get) {
 }
 
 solution(getMember);
+console.log('test');
+console.log('test');
