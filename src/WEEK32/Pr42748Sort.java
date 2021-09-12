@@ -2,7 +2,7 @@ package WEEK32;
 
 import java.util.*;
 
-public class Main {
+public class Pr42748Sort {
     static int[] solution(int[] array, int[][] commands) {
         int[] answer = new int[commands.length];
         for (int i = 0; i < commands.length; i++) {
