@@ -6,7 +6,6 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.Vector;
 
-import jdk.tools.jlink.internal.SymLinkResourcePoolEntry;
 
 public class Pr64061 {
     static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
