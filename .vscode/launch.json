@@ -6,6 +6,195 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch P14502",
+            "request": "launch",
+            "mainClass": "FASTCAMPUS.ALGO.D20.P14502",
+            "projectName": "Again2018_7b8cc72b"
+        },
+        {
+            "type": "java",
+            "name": "Launch P1260",
+            "request": "launch",
+            "mainClass": "FASTCAMPUS.ALGO.D20.P1260",
+            "projectName": "Again2018_7b8cc72b"
+        },
+        {
+            "type": "java",
+            "name": "Launch P2805",
+            "request": "launch",
+            "mainClass": "FASTCAMPUS.ALGO.D18.P2805",
+            "projectName": "Again2018_7b8cc72b"
+        },
+        {
+            "type": "java",
+            "name": "Launch P7795",
+            "request": "launch",
+            "mainClass": "FASTCAMPUS.ALGO.D17.P7795",
+            "projectName": "Again2018_7b8cc72b"
+        },
+        {
+            "type": "java",
+            "name": "Launch P11652",
+            "request": "launch",
+            "mainClass": "FASTCAMPUS.ALGO.D16.P11652",
+            "projectName": "Again2018_7b8cc72b"
+        },
+        {
+            "type": "java",
+            "name": "Launch P1015",
+            "request": "launch",
+            "mainClass": "FASTCAMPUS.ALGO.D16.P1015",
+            "projectName": "Again2018_7b8cc72b"
+        },
+        {
+            "type": "java",
+            "name": "Launch P1182",
+            "request": "launch",
+            "mainClass": "FASTCAMPUS.ALGO.D15.P1182",
+            "projectName": "Again2018_7b8cc72b"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main",
+            "request": "launch",
+            "mainClass": "FASTCAMPUS.ALGO.D15.Main",
+            "projectName": "Again2018_7b8cc72b"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main",
+            "request": "launch",
+            "mainClass": "Java_CT.Main",
+            "projectName": "Again2018_7b8cc72b"
+        },
+        {
+            "type": "java",
+            "name": "Launch Answer",
+            "request": "launch",
+            "mainClass": "FASTCAMPUS.ALGO.D13.Answer",
+            "projectName": "Again2018_7b8cc72b"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main",
+            "request": "launch",
+            "mainClass": "FASTCAMPUS.ALGO.D14.Main",
+            "projectName": "Again2018_7b8cc72b"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main",
+            "request": "launch",
+            "mainClass": "FASTCAMPUS.ALGO.D13.Main",
+            "projectName": "Again2018_7b8cc72b"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main",
+            "request": "launch",
+            "mainClass": "FASTCAMPUS.ALGO.D12.Main",
+            "projectName": "Again2018_7b8cc72b"
+        },
+        {
+            "type": "java",
+            "name": "Launch Practice01",
+            "request": "launch",
+            "mainClass": "FASTCAMPUS.ALGO.D11.Practice01",
+            "projectName": "Again2018_7b8cc72b"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main",
+            "request": "launch",
+            "mainClass": "FASTCAMPUS.ALGO.D11.Main",
+            "projectName": "Again2018_7b8cc72b"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main",
+            "request": "launch",
+            "mainClass": "FASTCAMPUS.ALGO.D10.Main",
+            "projectName": "Again2018_7b8cc72b"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main",
+            "request": "launch",
+            "mainClass": "FASTCAMPUS.ALGO.D09.Main",
+            "projectName": "Again2018_7b8cc72b"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main",
+            "request": "launch",
+            "mainClass": "FASTCAMPUS.ALGO.D08.Main",
+            "projectName": "Again2018_7b8cc72b"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main",
+            "request": "launch",
+            "mainClass": "FASTCAMPUS.ALGO.D07.Main",
+            "projectName": "Again2018_7b8cc72b"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main",
+            "request": "launch",
+            "mainClass": "FASTCAMPUS.ALGO.D06.Main",
+            "projectName": "Again2018_7b8cc72b"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main",
+            "request": "launch",
+            "mainClass": "FASTCAMPUS.ALGO.D04.Main",
+            "projectName": "Again2018_7b8cc72b"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main",
+            "request": "launch",
+            "mainClass": "FASTCAMPUS.ALGO.JAVA.D03.Main",
+            "projectName": "Again2018_7b8cc72b"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main",
+            "request": "launch",
+            "mainClass": "FASTCAMPUS.ALGO.JAVA.D02.Main",
+            "projectName": "Again2018_7b8cc72b"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main",
+            "request": "launch",
+            "mainClass": "FASTCAMPUS.ALGO.JAVA.D01.Main",
+            "projectName": "Again2018_7b8cc72b"
+        },
+        {
+            "type": "java",
+            "name": "Launch D01",
+            "request": "launch",
+            "mainClass": "FASTCAMPUS.ALGO.JAVA.D01.D01",
+            "projectName": "Again2018_7b8cc72b"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main",
+            "request": "launch",
+            "mainClass": "Java_CT.WEEK43.Main",
+            "projectName": "Again2018_7b8cc72b"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main",
+            "request": "launch",
+            "mainClass": "WEEK43.Main",
+            "projectName": "Again2018_7b8cc72b"
+        },
+        {
+            "type": "java",
             "name": "Launch Main",
             "request": "launch",
             "mainClass": "WEEK40.Main",
