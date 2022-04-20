@@ -1,10 +1,7 @@
-//시간복잡도 N^M (worst 7^7)
 const fs = require('fs');
 class Scanner {
-  read
-  stringToken
   constructor(fileName){
-    this.read = fs.readFileSync(fileName).toString().split('\n');
+    this.read = fs.readFileSync(fileName).toString().trim().split('\n');
     this.stringToken = [];
   }
   next(){
@@ -13,9 +10,9 @@ class Scanner {
         this.stringToken = this.read.shift().split(" ");
       } else {
         return null;
-      } 
-    }
-    return this.stringToken.shift(); 
+      }
+    } 
+    return this.stringToken.shift();
   }
 
   nextNumber(){
@@ -36,13 +33,19 @@ class Scanner {
     }
     
   }
-  
+}
+const scanner = new Scanner('stdin.txt');
+
+const input = function (){
 }
 
-const input = function(){
-  const scanner = new Scanner('./stdin.txt');
-  N = scanner.nextNumber();
-  M = scanner.nextNumber();
+const pro = function (){
+
 }
 
+const solve = function(){
+  input();
+  pro();
+}
 
+solve();
