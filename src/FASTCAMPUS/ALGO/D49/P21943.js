@@ -91,7 +91,6 @@ const findSignCase = function (pCount , qCount, arr){
   if(pCount === P && qCount === Q){
     signCase.push(arr);
   }
-  
  if(pCount < P){
   findSignCase(pCount + 1, qCount, [...arr, '+'])
  }
@@ -102,26 +101,22 @@ const findSignCase = function (pCount , qCount, arr){
 const arrange = function(arr,visited){
   if(arr.length === N){
     signCase.forEach(sign => {
-      order.forEach(od => {
-        let cArr = [...arr];
+        let value = [null];
+        let idx = -1;
+        value[ ++ idx] = arr[0];
         for(let i = 1; i < N; i ++){
-          let idx = od.indexOf(i);
-          let tag = sign[idx];
-          let sum = 0;
+          let tag = sign[i];
           if(tag === '+'){
-            sum = cArr[idx - 1] + cArr[idx];
+            value[idx] += arr[i];
           } else {
-            sum = cArr[idx - 1] * cArr[idx];
-          }
-          cArr[idx - 1] = sum;
-          cArr[idx] = sum;
-          if(i === N - 1){
-            if(sum > total) {
-              total = sum
-            }
+            value[ ++ idx] = arr[i];
           }
         }
-      })
+        let curValue = 1;
+        for(let i = 0; i <= idx; i ++){
+          curValue *= value[i];
+        }
+        total = Math.max(total,curValue);
     })
     return;
   }

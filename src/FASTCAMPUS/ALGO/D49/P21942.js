@@ -47,7 +47,7 @@ const input = function (){
   L += Number(tmp[1]) * (60 * 1000);
   pages = infos.map(info => {
     let tmp =[];
-    let time = new Date(info[0] + 'T' + info[1]+':00').getTime();
+    let time = new Date(info[0] + 'T' + info[1]).getTime();
     tmp[0] =  time
     tmp[1] = info[2];
     tmp[2] = info[3];
