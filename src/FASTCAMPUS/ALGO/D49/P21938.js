@@ -36,17 +36,14 @@ class Scanner {
 }
 const scanner = new Scanner('stdin.txt');
 let N, M;
-let avg, arr, visited, tem;
+let avg, arr;
 let T;
 const input = function (){
   [N,M] = scanner.nextLine().split(" ").map(Number);
   let info = scanner.read.splice(0, N).map(line => line.split(" ").map(Number));
-  //console.log(info);
-  avg = Array.from({length : N + 1}, () => Array.from({length : M + 1}, () => 0));
-  visited = Array.from({length : N + 1}, () => Array.from({length : M + 1}, () => 0));
   arr = Array.from({length : N + 1}, () => []);
+  avg = Array.from({length : N + 1}, () => Array.from({length : M + 1}, () => 0));
   T = scanner.nextNumber();
-  tem = [];
   for(let i = 1; i <= N; i ++){
     arr[i] = [0,...info[i - 1]];
   }
@@ -57,46 +54,29 @@ const input = function (){
         sum += arr[i][k];
       }
       avg[i][j + 1] = (Math.floor(sum / 3) >= T) ? 255 : 0
-      if(avg[i][j + 1] === 255) tem.push([i,j+1]);
     }
   }
-  //console.log(avg);
 }
-const dir = [[-1,0],[1,0],[0,-1],[0, 1]];
-const bfs = function (Y, X, count){
-  visited[Y][X] = count;
-  let Q = [[Y,X]];
-  let nY,nX;
-  while(Q.length !== 0){
-    let [pY, pX] = Q.shift();
-    dir.forEach(([dY,dX]) => {
-      nY = pY + dY;
-      nX = pX + dX;
-      if(nY < 1 || nY > N ) return;
-      if(nX < 1 || nX > M ) return;
-      if(avg[nY][nX] === 0) return;
-      if(visited[nY][nX] !== 0) return;
-      visited[nY][nX] = count;
-      Q.push([nY, nX]);
-    })
+const dfs = function (y, x){
+  if(y <= -1 || y > N || x <= -1 || x > M)return;
+  if(avg[y][x] === 255){
+    avg[y][x] = 0;
+    dfs(y - 1, x);
+    dfs(y + 1, x);
+    dfs(y, x - 1);
+    dfs(y, x + 1);
   }
 }
 const pro = function (){
   let count = 0;
-  // for(let i = 1; i <= N; i ++){
-  //   for(let j = 1; j <= M ; j ++){
-  //     if(avg[i][j] === 0) continue;
-  //     if(visited[i][j] !== 0) continue;
-  //     count ++;
-  //     bfs(i,j,count); 
-  //   }
-  // }
-  console.log(tem)
-  tem.forEach(([y,x]) => {
-    if(visited[y][x] !== 0) return;
-    count ++ 
-    bfs(y,x, count)
-  })
+  for(let i = 1; i <= N; i ++ ){
+    for(let j = 1; j <= M; j ++){
+      if(avg[i][j] === 255){
+        count ++;
+        dfs(i,j);
+      }
+    }
+  }
   console.log(count);
 }
 

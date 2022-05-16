@@ -36,22 +36,19 @@ class Scanner {
 }
 const scanner = new Scanner('stdin.txt');
 let N, M;
-let need, needed;
+let graph;
+let visited
 let X;
 const input = function (){
   [N,M] = scanner.nextLine().split(" ").map(Number);
-  need = Array.from({length : N + 1}, () => 0);
-  used = Array.from({length : N + 1}, () => 0);
-  needed = Array.from({length : N + 1}, () => []);
+  visited = Array.from({length : N + 1}, () => 0);
+  graph = Array.from({length : N + 1}, () => []);
   let infos = scanner.read.splice(0, M);
   infos.forEach(info => {
     [A, B] = info.split(" ").map(Number);
-    need[A] ++ 
-    needed[B].push(A);
+    graph[B].push(A);
   })
   X = scanner.nextNumber();
-  //console.log(need);
-  //console.log(needed);
 }
 
 const pro = function (){
@@ -60,15 +57,12 @@ const pro = function (){
   Q.push(X);
   while(Q.length !== 0){
     let pop = Q.pop();
-    for(let i = 0; i < needed[pop].length; i ++){
-      let v = needed[pop][i];
-      if(used[v] === 0){
-        count ++;
-        used[v] = 1;
-      }
-      if(needed[v].length > 0){
-        Q.push(v);
-      }
+    for(let i = 0; i < graph[pop].length; i ++){
+      let v = graph[pop][i];
+      if(visited[v] !== 0) continue;
+      count ++;
+      visited[v] = 1;
+      Q.push(v);
         
     }
   }  

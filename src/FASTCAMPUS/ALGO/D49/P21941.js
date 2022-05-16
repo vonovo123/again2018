@@ -59,6 +59,7 @@ const pro = function (){
       idx = cur + 1;
     }
   })
+  console.log(ava);
   for(let i = 0; i < len; i ++){
     for(let j = 0; j < ava[i].length; j ++){
       let size = ava[i][j][0];
