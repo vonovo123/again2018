@@ -6,6 +6,41 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch P1495",
+            "request": "launch",
+            "mainClass": "FASTCAMPUS.ALGO.D45.P1495",
+            "projectName": "Again2018_18c6595"
+        },
+        {
+            "type": "java",
+            "name": "Launch P5557",
+            "request": "launch",
+            "mainClass": "FASTCAMPUS.ALGO.D45.P5557",
+            "projectName": "Again2018_18c6595"
+        },
+        {
+            "type": "java",
+            "name": "Launch P1562",
+            "request": "launch",
+            "mainClass": "FASTCAMPUS.ALGO.D44.P1562",
+            "projectName": "Again2018_18c6595"
+        },
+        {
+            "type": "java",
+            "name": "Launch Template",
+            "request": "launch",
+            "mainClass": "FASTCAMPUS.ALGO.D37.Template",
+            "projectName": "Again2018_18c6595"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main",
+            "request": "launch",
+            "mainClass": "FASTCAMPUS.ALGO.D35.Main",
+            "projectName": "Again2018_7b8cc72b"
+        },
+        {
+            "type": "java",
             "name": "Launch P14502",
             "request": "launch",
             "mainClass": "FASTCAMPUS.ALGO.D20.P14502",

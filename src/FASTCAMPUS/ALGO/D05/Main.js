@@ -36,27 +36,28 @@ class Heap {
         this.array.pop();
         let hasChild = this.moveDown(idx);
         while (hasChild[0] !== -1 || hasChild[1] !== -1) {
-            console.log(hasChild);
             let left = hasChild[0];
             let right = hasChild[1];
             if (left !== -1 && right !== -1) { //자식 노드가 둘다 존재하면
-                if (this.array[left] > this.array[right]) {
-                    if (this.array[left] > this.array[idx]) {
+                if (this.array[left] < this.array[right]) {
+                    if (this.array[left] < this.array[idx]) {
                         this.swap(left, idx);
                         idx = left;
                     }
                 }
                 else {
-                    if (this.array[right] > this.array[idx]) {
+                    if (this.array[right] < this.array[idx]) {
                         this.swap(right, idx);
                         idx = right;
                     }
                 }
             }
             else if (left != -1) { //왼쪽만 존재하면
-                if (this.array[left] > this.array[idx]) {
+                if (this.array[left] < this.array[idx]) {
                     this.swap(left, idx);
                     idx = left;
+                }else {
+                    break;
                 }
             }
             //오른쪽만 존재할 순 없다.
@@ -69,7 +70,7 @@ class Heap {
             return -1;
         }
         let parent_idx = Math.floor(idx / 2);
-        if (this.array[parent_idx] < this.array[idx]) {
+        if (this.array[parent_idx] > this.array[idx]) {
             return parent_idx;
         }
         return -1;
@@ -91,5 +92,5 @@ heap.insert(8);
 heap.insert(5);
 heap.insert(4);
 heap.insert(20);
-heap.pop();
-heap.printAll();
+console.log(heap.pop());
+//heap.printAll();

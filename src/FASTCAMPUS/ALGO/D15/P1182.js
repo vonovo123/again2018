@@ -1,8 +1,6 @@
 //시간복잡도 N^M (worst 7^7)
 const fs = require('fs');
 class Scanner {
-  read
-  stringToken
   constructor(fileName){
     this.read = fs.readFileSync(fileName).toString().split('\n');
     this.stringToken = [];

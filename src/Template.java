@@ -6,7 +6,7 @@ public class Template {
         FastReader scan = new FastReader();
     }
     public static void pro(){
-
+        String [] test = {"1"};
     }
     public static void main(String[] args) {
         input();

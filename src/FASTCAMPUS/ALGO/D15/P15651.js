@@ -1,7 +1,6 @@
 const fs = require('fs');
+const { collapseTextChangeRangesAcrossMultipleVersions } = require('typescript');
 class Scanner {
-  read
-  stringToken
   constructor(fileName){
     this.read = fs.readFileSync(fileName).toString().split('\n');
     this.stringToken = [];
@@ -12,9 +11,9 @@ class Scanner {
         this.stringToken = this.read.shift().split(" ");
       } else {
         return null;
-      } 
-    }
-    return this.stringToken.shift(); 
+      }
+    } 
+    return this.stringToken.shift();
   }
 
   nextNumber(){
@@ -35,43 +34,33 @@ class Scanner {
     }
     
   }
-  
 }
-
-
-// 1 부터 N 까지의 자연수 중 M 개를 고른 수열
-// 같은 수를  여러번 골라도 됨 : 중복가능
-// 순서가 다르면 다른 수열 : 순서 YES 
-// 시간 복잡도 N^M
-// Max N : 7 | Max M : 7
-// worst case 7^7
-// 시간 제한 1초 
-// brute force
-let N;
-let M;
-let selected = [0,];
-let stringBuilder = "";
-const input = function(){
-  const scanner = new Scanner('./stdin.txt');
+const scanner = new Scanner('stdin.txt');
+let N, M, selected;
+const input = function (){
   N = scanner.nextNumber();
   M = scanner.nextNumber();
+  selected = [];
 }
 
-const rec_func = function( k ){
-  if(k === M + 1){
-    for(let i = 1; i < k; i ++){
-      stringBuilder += (selected[i] + " ");
-    }
-    stringBuilder += `\n`;
-  } else {
-    for(let i = 1; i <= N; i ++){
-      selected.push(i);
-      rec_func(k + 1);
-      selected.pop();
-    }
+const rec_func = function(k){
+  if(selected.length == M){
+    console.log(selected);
+    return;
   }
+  if(k > N) return;
+  selected.push(k);
+  rec_func(k + 1);
+  selected.pop();
+  rec_func(k + 1);
 }
-input();
+const pro = function (){
+  rec_func(1);
+}
 
-rec_func(1);
-console.log(stringBuilder)
+const solve = function(){
+  input();
+  pro();
+}
+
+solve();
